@@ -1,0 +1,27 @@
+{
+  "name": "assettler",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap --concurrency 1",
+    "clean": "lerna clean",
+    "prepublish": "",
+    "publish": "lerna publish --npm-client=npm",
+    "outdated": "lerna exec --no-bail --stream -- yarn outdated",
+    "pretest": "lerna run pretest",
+    "test": "jest",
+    "cover": "jest --coverage",
+    "watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "lerna": "^3.8.0"
+  }
+}

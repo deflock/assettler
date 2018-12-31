@@ -1,0 +1,17 @@
+{
+  "name": "@assettler/core",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "dependencies": {
+    "@assettler/utils": "file:../utils",
+    "chokidar": "^2.0.4"
+  },
+  "devDependencies": {
+  }
+}

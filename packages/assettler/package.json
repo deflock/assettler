@@ -1,0 +1,12 @@
+{
+  "name": "assettler",
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
