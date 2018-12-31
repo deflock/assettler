@@ -1,6 +1,6 @@
 {
   "name": "@assettler/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -11,7 +11,5 @@
   "dependencies": {
     "@assettler/utils": "file:../utils",
     "chokidar": "^2.0.4"
-  },
-  "devDependencies": {
   }
 }

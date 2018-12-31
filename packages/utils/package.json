@@ -1,6 +1,6 @@
 {
   "name": "@assettler/utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -11,7 +11,5 @@
   "dependencies": {
     "globby": "^8.0.1",
     "mkdirp": "^0.5.1"
-  },
-  "devDependencies": {
   }
 }
