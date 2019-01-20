@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --concurrency 1",
-    "clean": "lerna clean",
+    "clean": "lerna clean && lerna run clean",
+    "compile": "lerna run compile",
+    "recompile": "lerna run recompile",
     "version": "lerna version --npm-client=npm",
     "release": "lerna publish --npm-client=npm",
     "outdated": "lerna exec --no-bail --stream -- yarn outdated",
@@ -20,8 +22,20 @@
     "watch": "jest --watch"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
-    "lerna": "^3.8.0"
+    "lerna": "^3.8.0",
+    "rimraf": "^2.6.3"
   }
 }

@@ -8,8 +8,14 @@
   "engines": {
     "node": ">=8.0"
   },
+  "scripts": {
+    "clean": "rimraf lib",
+    "compile": "babel src --out-dir lib --root-mode upward",
+    "recompile": "yarn clean && yarn compile",
+    "pretest": "yarn recompile"
+  },
   "dependencies": {
-    "@assettler/utils": "file:../utils",
+    "@deflock/utils": "^0.1.0",
     "chokidar": "^2.0.4"
   }
 }

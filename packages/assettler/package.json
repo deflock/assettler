@@ -4,5 +4,11 @@
   "license": "MIT",
   "engines": {
     "node": ">=8.0"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "compile": "babel src --out-dir lib --root-mode upward",
+    "recompile": "yarn clean && yarn compile",
+    "pretest": "yarn recompile"
   }
 }
