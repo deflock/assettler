@@ -15,7 +15,12 @@
     "pretest": "yarn recompile"
   },
   "dependencies": {
-    "@deflock/utils": "^0.1.0",
-    "chokidar": "^2.0.4"
+    "@deflock/aggregate-watcher": "^0.1.0",
+    "@deflock/crypto": "^0.1.0",
+    "@deflock/fs": "^0.1.0",
+    "@deflock/path": "^0.1.0",
+    "@deflock/string-trim": "^0.1.0",
+    "anymatch": "^2.0.0",
+    "fast-glob": "^2.2.6"
   }
 }

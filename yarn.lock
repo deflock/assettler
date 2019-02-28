@@ -679,13 +679,36 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@deflock/utils@^0.1.0":
+"@deflock/aggregate-watcher@^0.1.0":
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@deflock/utils/-/utils-0.1.0.tgz#6f564a711f28e50fc66e04cf976ac6789150626b"
-  integrity sha512-MRgAW7jpwRmltq3UcAhlTIuzCRS7aH2AkchZzcjG5viy4jHkvvGIDWMWlqF5UUZ4JMfOhWaqMhgP7gOSRrlXxQ==
+  resolved "https://registry.yarnpkg.com/@deflock/aggregate-watcher/-/aggregate-watcher-0.1.0.tgz#77bdb0a9d288e5d5e51737bb259d5e7a3b1adf37"
+  integrity sha512-xty07dvckCzJpJAEu6qCFJvSF6r0GFRKwA2g5puyepcuU96rPvyVfy/ZVxveujO76iWTsliyn7z0ewlaq419tg==
   dependencies:
-    globby "^8.0.1"
+    chokidar "^2.0.4"
+
+"@deflock/crypto@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@deflock/crypto/-/crypto-0.1.0.tgz#9fe588444afa55b59d3c8e0f6f288fdfa6197378"
+  integrity sha512-y/DdXodo2noklDBfPZv4EXR4H5J1dPcfxn2E2y+HszhJVMFk9g4l6KKIFHJ8da78VWwgnYfMVOR7GgLNcCORKw==
+
+"@deflock/fs@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@deflock/fs/-/fs-0.1.0.tgz#f643e7f1aa6825de8eb20d92e030905cd7ba53a7"
+  integrity sha512-KyPxXFdtciQ3HieNhFEAmy6/A64FoLmLHglaMeeL0lW93rHS6wo+VlBAsxwwTZSzMrLX0Fp/svBkResSJkI2rA==
+  dependencies:
     mkdirp "^0.5.1"
+
+"@deflock/path@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@deflock/path/-/path-0.1.0.tgz#e5ade575aa13f55bf9e6d94f878ede9a0a514ada"
+  integrity sha512-GkcVG64NIUUSXFJqeOZomxvfTBkTE/+0sa1brQgbVT506pdUL8GET5PE5LZ2NwtWC31ruMJ3PYs8YrKuuBB1cQ==
+  dependencies:
+    "@deflock/string-trim" "^0.1.0"
+
+"@deflock/string-trim@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@deflock/string-trim/-/string-trim-0.1.0.tgz#e3fe65c75654a7387604a9b43e09c72dba5244f7"
+  integrity sha512-DUEPfXABRMWWO/jJITvIk9QL29LFwo23Yy/9DWpy5sphP3Z3q1bFTa51AHNNqT0vFsre5HdiQbLFtg2mrGWaYg==
 
 "@lerna/add@3.10.6":
   version "3.10.6"
@@ -2821,7 +2844,7 @@ fast-deep-equal@^2.0.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
-fast-glob@^2.0.2:
+fast-glob@^2.0.2, fast-glob@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.6.tgz#a5d5b697ec8deda468d85a74035290a025a95295"
   integrity sha512-0BvMaZc1k9F+MeWWMe8pL6YltFzZYcJsYU7D4JyDA6PAczaXvxqQQ/z+mDF7/4Mw01DeUc+i3CTKajnkANkV4w==
