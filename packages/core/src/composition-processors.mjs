@@ -24,6 +24,7 @@ class CompositionProcessor extends AbstractProcessor {
      */
     async process(files, params) {
         // Return is very important here instead of await!
+        // Looks like babel transpiles `await this ...` to `(await this) ...`
         return this instanceof ParallelProcessor
             ? this.doProcessParallel(this.getAsArray(), files, params)
             : this.doProcessSeries(this.getAsArray(), files, params);

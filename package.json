@@ -13,7 +13,7 @@
     "clean": "lerna clean && lerna run clean",
     "compile": "lerna run compile",
     "recompile": "lerna run recompile",
-    "version": "lerna version --npm-client=npm",
+    "version": "yarn run recompile && lerna version --npm-client=npm",
     "release": "lerna publish --npm-client=npm",
     "outdated": "lerna exec --no-bail --stream -- yarn outdated",
     "pretest": "lerna run pretest",
