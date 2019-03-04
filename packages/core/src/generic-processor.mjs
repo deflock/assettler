@@ -19,6 +19,8 @@ export default class GenericProcessor extends AbstractProcessor {
         this.options = Object.assign({
             processMode: 'parallel',
         }, options);
+
+        this.name = this.options.name || this.constructor.name;
     }
 
     /**
@@ -27,6 +29,7 @@ export default class GenericProcessor extends AbstractProcessor {
      * @returns {Promise<*>}
      */
     async process(files, params) {
+        params.log(`[${this.name}] process()`);
         return this.options.processMode === 'series'
             ? this.doProcessSeries(files, params)
             : this.doProcessParallel(files, params);
@@ -68,25 +71,28 @@ export default class GenericProcessor extends AbstractProcessor {
      * @returns {Promise}
      */
     doGetFilterProcessPromise(file, params) {
+        // If you do not know how exactly async/await/generator works
+        // better use promises instead
         return this.defaultFilterAsync(file, params)
-            .then(res => {
-                if (!res) {
+            .then(result => {
+                if (result === false) {
                     return;
                 }
                 return this.filterAsync(file, params)
-                    .then(res => {
-                        if (!res) {
+                    .then(result => {
+                        if (result === false) {
                             return;
                         }
 
-                        if (!this.defaultFilterSync(file, params)) {
+                        if (this.defaultFilterSync(file, params) === false) {
                             return;
                         }
 
-                        if (!this.filterSync(file, params)) {
+                        if (this.filterSync(file, params) === false) {
                             return;
                         }
 
+                        params.log(`[${this.name}] doProcess()`, file.path, file.state);
                         return this.doProcess(file, params);
                     });
             });

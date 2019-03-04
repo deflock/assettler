@@ -23,7 +23,8 @@ class CompositionProcessor extends AbstractProcessor {
      * @returns {Promise<void>}
      */
     async process(files, params) {
-        await this instanceof ParallelProcessor
+        // Return is very important here instead of await!
+        return this instanceof ParallelProcessor
             ? this.doProcessParallel(this.getAsArray(), files, params)
             : this.doProcessSeries(this.getAsArray(), files, params);
     }
@@ -43,7 +44,13 @@ class CompositionProcessor extends AbstractProcessor {
             } else if (processor instanceof ParallelProcessor) {
                 promise = promise.then(() => this.doProcessParallel(processor.getAsArray(), files, params));
             } else {
-                promise = promise.then(() => processor.process(files, params));
+                if (typeof processor === 'object' && processor.process) {
+                    promise = promise.then(() => processor.process(files, params));
+                } else if (typeof processor === 'function') {
+                    promise = promise.then(() => processor(files, params));
+                } else {
+                    throw new Error('Processor must be a function or implement Processor');
+                }
             }
         }
 
@@ -65,7 +72,14 @@ class CompositionProcessor extends AbstractProcessor {
             } else if (processor instanceof ParallelProcessor) {
                 promises.push(this.doProcessParallel(processor.getAsArray(), files, params));
             } else {
-                promises.push(processor.process(files, params));
+                if (typeof processor === 'object' && processor.process) {
+                    promises.push(processor.process(files, params));
+                } else if (typeof processor === 'function') {
+                    promises.push(processor(files, params));
+                } else {
+                    throw new Error('Processor must be a function or implement Processor');
+                }
+
             }
         }
 
